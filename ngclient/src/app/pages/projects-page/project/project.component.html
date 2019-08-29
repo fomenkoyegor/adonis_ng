@@ -1,0 +1,34 @@
+
+<mat-list-item
+  (click)="onSelect(project)"
+  [class.active]="selectedProject===project"
+>
+
+
+  <mat-icon mat-list-icon>folder</mat-icon>
+
+
+  <mat-form-field *ngIf="isEdit" mat-line>
+    <input matInput [(ngModel)]="newTitle">
+  </mat-form-field>
+
+  <button *ngIf="isEdit" (click)="onSave()" mat-raised-button>
+    <mat-icon mat-list-icon>save</mat-icon>
+  </button>
+  <button *ngIf="isEdit" (click)="onCancel()" mat-raised-button >
+    <mat-icon mat-list-icon>cancel</mat-icon>
+  </button>
+
+
+  <h4 *ngIf="!isEdit" mat-line>{{project.title}}</h4>
+  <button *ngIf="!isEdit" (click)="onEdit()" mat-raised-button >
+    <mat-icon mat-list-icon>edit</mat-icon>
+  </button>
+
+  <button *ngIf="!isEdit" (click)="onDelete($event,project)" mat-raised-button >
+    <mat-icon mat-list-icon>delete</mat-icon>
+  </button>
+
+  <p *ngIf="!isEdit" mat-line> {{project.updated_at | date:'medium'}} </p>
+
+</mat-list-item>

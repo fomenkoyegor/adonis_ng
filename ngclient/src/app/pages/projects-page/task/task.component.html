@@ -1,0 +1,35 @@
+
+<mat-list-item class="task" [class.complited]="task.complited">
+
+
+  <button mat-raised-button *ngIf="!isEdit" (click)="onUpdate(true)">
+    <mat-icon  *ngIf="task.complited" mat-list-icon>not_interested</mat-icon>
+    <mat-icon  *ngIf="!task.complited" mat-list-icon>playlist_add_check</mat-icon>
+  </button>
+
+  <mat-form-field *ngIf="isEdit" mat-line>
+    <input matInput [(ngModel)]="newDescription">
+  </mat-form-field>
+
+  <button *ngIf="isEdit" (click)="onSave()" mat-raised-button>
+    <mat-icon mat-list-icon>save</mat-icon>
+  </button>
+  <button *ngIf="isEdit" (click)="onCancel()" mat-raised-button >
+    <mat-icon mat-list-icon>cancel</mat-icon>
+  </button>
+
+
+
+  <h4 *ngIf="!isEdit" mat-line>{{task.description}}</h4>
+  <button *ngIf="!isEdit" (click)="onEdit()" mat-raised-button>
+    <mat-icon mat-list-icon>edit</mat-icon>
+  </button>
+
+  <button *ngIf="!isEdit" (click)="onDelete()" mat-raised-button>
+    <mat-icon mat-list-icon>delete</mat-icon>
+  </button>
+
+  <p *ngIf="!isEdit" mat-line> {{task.updated_at | date:'medium'}} </p>
+
+</mat-list-item>
+

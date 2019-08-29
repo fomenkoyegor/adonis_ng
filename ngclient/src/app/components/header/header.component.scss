@@ -1,0 +1,14 @@
+.navbar{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  .link{
+    cursor: pointer;
+    transition: 0.45s;
+    &:hover{
+      background-color: whitesmoke;
+      color: black;
+    }
+  }
+}
+

@@ -1,0 +1,25 @@
+.auth{
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(../../../../assets/login.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  .form{
+    width: 65vw;
+    transform: translateY(-150px);
+    box-shadow: 1px 1px 5px 5px rgba(0,0,0,.5);
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(0,0,0,0.8);
+    border-radius: 5px;
+    input{
+      color: white;
+      margin-top: 5px;
+    }
+  }
+}

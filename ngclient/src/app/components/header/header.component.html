@@ -1,0 +1,33 @@
+<!--<header>-->
+
+
+<!--</header>-->
+<mat-toolbar>
+  <div class="navbar">
+
+    <ng-container *ngIf="isAuth$ | async;else auth">
+
+      <div routerLink='/projects' class="link">
+       projects
+      </div>
+
+      <div (click)="onLogOut()" class="link">
+        logout
+      </div>
+
+    </ng-container>
+    <ng-template #auth>
+
+      <div routerLink='/auth/login' class="link">
+        login
+      </div>
+
+      <div routerLink='/auth/logup' class="link">
+       logup
+      </div>
+
+    </ng-template>
+
+
+  </div>
+</mat-toolbar>

@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="item projects">
+    <app-project-create></app-project-create>
+
+    <mat-list *ngIf="projects$ | async as projects">
+      <app-project *ngFor="let project of projects" [project]="project"></app-project>
+    </mat-list>
+
+  </div>
+  <div class="item tasks">
+    <app-task-create></app-task-create>
+
+    <ng-container *ngIf="tasks$ | async as tasks">
+
+      <ng-container *ngIf="tasks.length;else emptyTasks">
+
+        <mat-list *ngIf="tasks$ | async as tasks;">
+          <app-task *ngFor="let task of tasks" [task]="task"></app-task>
+        </mat-list>
+
+      </ng-container>
+
+
+      <ng-template #emptyTasks>
+        <mat-list>
+          <mat-list-item>
+
+            <mat-icon mat-list-icon>autorenew</mat-icon>
+
+            <h4 mat-line>not found...</h4>
+
+          </mat-list-item>
+        </mat-list>
+      </ng-template>
+
+    </ng-container>
+  </div>
+
+</div>

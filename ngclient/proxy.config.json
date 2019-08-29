@@ -1,0 +1,14 @@
+
+{
+  "/api/*":{
+    "target":"https://adonisjsngtodo.herokuapp.com",
+    "secure":false,
+    "changeOrigin":true
+  },
+  "/uploads/*":{
+    "target":"http://127.0.0.1:3333",
+    "secure":false,
+    "changeOrigin":true
+  }
+
+}

@@ -1,0 +1,42 @@
+<div class="auth">
+
+  <div class="form">
+
+
+    <mat-form-field>
+      <input matInput placeholder="Enter your email" [formControl]="email" required>
+      <mat-error *ngIf="email.invalid">{{getErrorMessageEmail()}}</mat-error>
+    </mat-form-field>
+
+
+
+    <mat-form-field>
+      <input matInput #input maxlength="10"
+             placeholder="Enter your password"
+             [type]="hide ? 'password' : 'text'"
+             [formControl]="password"
+             required
+      >
+      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+              [attr.aria-pressed]="hide">
+        <mat-icon color="accent">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+      <mat-hint align="end">{{input.value?.length || 0}}/10</mat-hint>
+      <mat-error *ngIf="password.invalid">{{getErrorMessagePassword()}}</mat-error>
+    </mat-form-field>
+
+
+    <button mat-raised-button color="primary"
+            [disabled]="email.invalid || password.invalid"
+            (click)="onSubmit()"
+    >
+      logUp
+    </button>
+
+
+  </div>
+
+</div>
+
+
+

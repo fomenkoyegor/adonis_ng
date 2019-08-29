@@ -1,0 +1,40 @@
+@import "./scroll";
+*, html, body {
+  font-family: Roboto, "Helvetica Neue",
+  sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+
+body {
+  min-height: 100vh;
+  min-width: 100vw;
+  overflow: hidden;
+  background-color: #333;
+}
+
+mat-list-item {
+  &:hover {
+    background-color: lightslategray;
+    transition: 0.14s;
+    cursor: pointer;
+  }
+  &.active {
+    background-color: maroon;
+  }
+  &.task{
+    background-color: lightseagreen;
+    margin-top: 3px;
+    &.complited{
+      background-color: blueviolet;
+      color: black;
+      text-decoration: line-through;
+    }
+
+  }
+}
+
+

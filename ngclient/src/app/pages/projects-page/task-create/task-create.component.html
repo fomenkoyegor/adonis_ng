@@ -1,0 +1,15 @@
+<mat-list *ngIf="selectedProject$ | async as selectedProject">
+  <form (ngSubmit)="onCreate(selectedProject)">
+    <mat-list-item>
+      <mat-form-field mat-line>
+        <input matInput [formControl]="description">
+      </mat-form-field>
+
+
+      <button mat-raised-button [disabled]="description.invalid">
+        <mat-icon mat-list-icon>playlist_add</mat-icon>
+      </button>
+
+    </mat-list-item>
+  </form>
+</mat-list>
